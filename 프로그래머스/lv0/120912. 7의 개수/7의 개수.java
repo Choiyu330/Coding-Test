@@ -1,23 +1,20 @@
 class Solution {
     public int solution(int[] array) {
+        // array의 값을 StringBuilder에 전부 넣고
+        // String 배열에 한 개씩 나눠준다
+        // 7이면 answer++
         int answer = 0;
+        StringBuilder sb = new StringBuilder();
         
         for(int i=0; i<array.length; i++) {
-            if(String.valueOf(array[i]).length() >= 2) {
-                
-                String str1 = String.valueOf(array[i]);
-                String[] str2 = str1.split("");
-                
-                for(int j=0; j<str2.length; j++) {
-                    if(str2[j].equals("7")) {
-                        answer++;
-                    }
-                }
-            }
-            else {
-                if(String.valueOf(array[i]).equals("7")) {
-                    answer++;
-                }
+            sb.append(array[i]);
+        }
+        
+        String[] str = sb.toString().split("");
+        
+        for(String num : str) {
+            if(num.equals("7")) {
+                answer++;
             }
         }
         return answer;

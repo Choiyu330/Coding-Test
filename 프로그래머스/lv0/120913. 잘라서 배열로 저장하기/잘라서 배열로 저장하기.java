@@ -8,6 +8,7 @@ class Solution {
 
         for(int i=0; i<my_str.length(); i++) {
             str += my_str.charAt(i);
+            // str 문자열의 크기가 n과 같거나 i가 my_str 길이 끝인 경우
             if(str.length() == n || i == my_str.length() - 1) {
                 answer[cnt] = str;
                 cnt++;

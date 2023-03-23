@@ -1,17 +1,16 @@
 class Solution {
     public int solution(String my_string) {
+        String[] strArr = my_string.split(" ");
+        int answer = Integer.parseInt(strArr[0]);
         
-        String[] stringArr = my_string.split(" ");
-        int answer = Integer.parseInt(stringArr[0]);
-        
-        for(int i = 1; i < stringArr.length; i+=2) {
-            if(stringArr[i].equals("+")) {
-                answer += Integer.parseInt(stringArr[i+1]);
-            } else {
-                answer -= Integer.parseInt(stringArr[i+1]);
+        for(int i=1; i<strArr.length; i+=2) {
+            if(strArr[i].equals("+")) {
+                answer += Integer.parseInt(strArr[i+1]);
+            }
+            else {
+                answer -= Integer.parseInt(strArr[i+1]);
             }
         }
-        
         return answer;
     }
 }

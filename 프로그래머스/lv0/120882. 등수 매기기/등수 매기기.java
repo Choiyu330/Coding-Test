@@ -1,0 +1,26 @@
+import java.util.*;
+
+class Solution {
+    public int[] solution(int[][] score) {
+        int[] answer = new int[score.length];
+        double[] avg = new double[score.length];
+        
+        // 영어, 수학 점수 평균값
+        for(int i=0; i<score.length; i++) {
+            avg[i] = ((double)score[i][0] + score[i][1]) / 2;  
+        }
+        
+        // 등수 매기기
+        for(int i=0; i<avg.length; i++) {
+            int rank = 1;
+            for(int j=0; j<avg.length; j++) {
+                if(avg[i] < avg[j]) {
+                    answer[i] = rank;
+                    rank++;
+                }
+                answer[i] = rank;
+            }
+        }
+        return answer;
+    }
+}

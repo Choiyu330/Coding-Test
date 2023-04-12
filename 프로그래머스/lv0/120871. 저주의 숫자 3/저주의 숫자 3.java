@@ -1,14 +1,12 @@
-import java.util.*;
-
 class Solution {
     public int solution(int n) {
-        ArrayList<Integer> arr = new ArrayList<>();
+        int answer = 0;
 
-        for(int i=1; i<=200; i++) {
-            if(i % 3 != 0 && !String.valueOf(i).contains("3")) {
-                arr.add(i);
-            }
+        for (int i=1; i<= n; i++) {
+            answer++;
+            if (answer % 3 == 0 || String.valueOf(answer).contains("3"))
+                i--;
         }
-        return arr.get(n-1);
+        return answer;
     }
 }

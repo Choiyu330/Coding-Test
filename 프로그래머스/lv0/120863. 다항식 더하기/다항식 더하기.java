@@ -1,5 +1,3 @@
-import java.util.*;
-
 class Solution {
     public String solution(String polynomial) {
         String answer = "";
@@ -21,18 +19,16 @@ class Solution {
             
         }
         // x계수가 0일 때
-        // x계수가 1일 때
-        // 상수가 0일 때
         if(x_num == 0) {
             if(num == 0) { answer = ""; }
             else { answer = "" + num; }
         }
-        
+        // x계수가 1일 때
         else if(x_num == 1) {
             if(num == 0) { answer = "x"; }
             else { answer = "x + " + num; }
         }
-        
+        // 상수가 0일 때
         else if(num == 0) {
             answer = x_num + "x";
         }
@@ -40,8 +36,6 @@ class Solution {
         else {
             answer = x_num + "x + " + num; 
         }
-        
-        
         return answer;
     }
 }

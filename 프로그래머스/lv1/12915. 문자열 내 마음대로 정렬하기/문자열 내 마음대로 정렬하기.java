@@ -1,20 +1,16 @@
-import java.util.*;
+import java.util.*; 
 
 class Solution {
     public String[] solution(String[] strings, int n) {
-        String[] answer = new String[strings.length];
-        Character[] alphabet = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
-        int cnt = 0;
-        
-        Arrays.sort(strings);
-        
-        for(int i=0; i<alphabet.length; i++) {
-            for(int j=0; j<strings.length; j++) {
-                if(strings[j].charAt(n) == alphabet[i]) {
-                    answer[cnt] = strings[j];
-                    cnt ++;
-                }  
-            }
+        String[] answer = {};
+        ArrayList<String> arr = new ArrayList<>();
+        for (int i = 0; i < strings.length; i++) {
+            arr.add("" + strings[i].charAt(n) + strings[i]);
+        }
+        Collections.sort(arr);
+        answer = new String[arr.size()];
+        for (int i = 0; i < arr.size(); i++) {
+            answer[i] = arr.get(i).substring(1, arr.get(i).length());
         }
         return answer;
     }

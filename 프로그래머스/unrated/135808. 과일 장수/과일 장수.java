@@ -6,11 +6,8 @@ class Solution {
         
         Arrays.sort(score);
         
-        for(int i=score.length; i>=0; i-=m) {
-            if(i - m < 0)
-                break;
-            else
-                answer += score[i-m] * m;
+        for(int i=score.length; i>=m; i-=m) {
+            answer += score[i-m] * m;
         }
         return answer;
     }

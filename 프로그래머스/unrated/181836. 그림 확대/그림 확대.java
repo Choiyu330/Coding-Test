@@ -17,6 +17,6 @@ class Solution {
         }
         String[] answer = new String[answerList.size()];
         answer = answerList.toArray(answer);
-        return answer;
+        return answer; 
     }
 }

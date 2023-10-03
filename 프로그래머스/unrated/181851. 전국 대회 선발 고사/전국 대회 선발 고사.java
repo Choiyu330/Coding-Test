@@ -20,7 +20,6 @@ class Solution {
                 break;
             }
         }
-        
         return 10000 * result.get(0) + 100 * result.get(1) + result.get(2);
     }
 }

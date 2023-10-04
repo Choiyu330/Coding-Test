@@ -4,7 +4,7 @@ class Solution {
     public int solution(int[] rank, boolean[] attendance) {
         int[][] rankIndex = new int[rank.length][2];
 
-        for (int i = 0; i < rank.length; i++) {
+        for (int i=0; i<rank.length; i++) {
             rankIndex[i][0] = rank[i];
             rankIndex[i][1] = i; 
         } 

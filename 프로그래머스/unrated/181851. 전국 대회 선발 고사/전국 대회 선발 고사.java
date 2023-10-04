@@ -6,7 +6,7 @@ class Solution {
 
         for (int i = 0; i < rank.length; i++) {
             rankIndex[i][0] = rank[i];
-            rankIndex[i][1] = i;
+            rankIndex[i][1] = i; 
         } 
         
         Arrays.sort(rankIndex, (a, b) -> a[0] - b[0]);
